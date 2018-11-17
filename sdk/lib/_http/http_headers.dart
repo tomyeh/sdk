@@ -986,7 +986,7 @@ class _Cookie implements Cookie {
       }
     }
 
-    if (value[0] == '"' && value[value.length - 1] == '"') {
+    if (value.isNotEmpty && value.codeUnits[0] == 0x22 && value.codeUnits[value.length - 1] == 0x22) {
       value = value.substring(1, value.length - 1);
     }
     for (int i = 0; i < value.length; i++) {
